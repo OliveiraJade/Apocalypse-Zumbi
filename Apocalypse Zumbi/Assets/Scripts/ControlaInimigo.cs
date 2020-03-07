@@ -7,6 +7,14 @@ public class ControlaInimigo : MonoBehaviour
     public GameObject jogador;
     public float velocidade = 5f;
 
+    private void Start()
+    {
+        jogador = GameObject.FindWithTag("Jogador");
+        int geraTipoZumbi = Random.Range(1, 28);
+        transform.GetChild(geraTipoZumbi).gameObject.SetActive(true);
+
+    }
+
     void AtacaJogador()
     {
         Time.timeScale = 0;
